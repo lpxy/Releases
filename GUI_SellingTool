@@ -1,0 +1,251 @@
+--[[
+
+	FREE & OPEN SOURCED @xrefr_
+	UPDATED @ 4/11/2024
+	----------------------------
+	CHANGES:
+		RECENT RELEASE
+		
+]]--
+
+-- UI ELEMENTS --
+local Tools = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local CashIMG1 = Instance.new("ImageLabel")
+local Counter = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local TargetTextbox = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local CashIMG2 = Instance.new("ImageLabel")
+local CashLabel = Instance.new("TextLabel")
+local Input = Instance.new("TextBox")
+local UICorner_3 = Instance.new("UICorner")
+local Output = Instance.new("TextLabel")
+local CashIMG3 = Instance.new("ImageLabel")Tools.Name = "Tools"
+Tools.Parent = game.CoreGui
+Tools.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Main.Name = "Main"
+Main.Parent = Tools
+Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.151330799, 0, 0.400620043, 0)
+Main.Size = UDim2.new(0, 167, 0, 172)
+CashIMG1.Name = "CashIMG1"
+CashIMG1.Parent = Main
+CashIMG1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CashIMG1.BackgroundTransparency = 1.000
+CashIMG1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CashIMG1.BorderSizePixel = 0
+CashIMG1.Position = UDim2.new(0.0622178502, 0, 0.851687074, 0)
+CashIMG1.Size = UDim2.new(0, 30, 0, 17)
+CashIMG1.Image = "rbxassetid://7178573833"
+Counter.Name = "Counter"
+Counter.Parent = Main
+Counter.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Counter.BackgroundTransparency = 1.000
+Counter.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Counter.BorderSizePixel = 0
+Counter.Position = UDim2.new(0.28742516, 0, 0.819279492, 0)
+Counter.Size = UDim2.new(0, 119, 0, 31)
+Counter.Font = Enum.Font.RobotoCondensed
+Counter.Text = "Counter"
+Counter.TextColor3 = Color3.fromRGB(255, 255, 255)
+Counter.TextSize = 23.000
+Counter.TextXAlignment = Enum.TextXAlignment.Left
+UICorner.CornerRadius = UDim.new(0, 4)
+UICorner.Parent = Main
+TargetTextbox.Name = "TargetTextbox"
+TargetTextbox.Parent = Main
+TargetTextbox.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+TargetTextbox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TargetTextbox.BorderSizePixel = 0
+TargetTextbox.Position = UDim2.new(0.0239520967, 0, 0.1720801, 0)
+TargetTextbox.Size = UDim2.new(0, 159, 0, 22)
+TargetTextbox.Font = Enum.Font.RobotoCondensed
+TargetTextbox.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+TargetTextbox.PlaceholderText = "USER/DISPLAY"
+TargetTextbox.Text = ""
+TargetTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TargetTextbox.TextScaled = true
+TargetTextbox.TextSize = 14.000
+TargetTextbox.TextWrapped = true
+UICorner_2.CornerRadius = UDim.new(0, 4)
+UICorner_2.Parent = TargetTextbox
+Title.Name = "Title"
+Title.Parent = Main
+Title.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0.0239520967, 0, -0.00350245717, 0)
+Title.Size = UDim2.new(0, 80, 0, 31)
+Title.Font = Enum.Font.RobotoCondensed
+Title.Text = "Xai's Tools"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 20.000
+Title.TextXAlignment = Enum.TextXAlignment.Left
+CashIMG2.Name = "CashIMG2"
+CashIMG2.Parent = Main
+CashIMG2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CashIMG2.BackgroundTransparency = 1.000
+CashIMG2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CashIMG2.BorderSizePixel = 0
+CashIMG2.Position = UDim2.new(0.0622178502, 0, 0.334997296, 0)
+CashIMG2.Size = UDim2.new(0, 30, 0, 17)
+CashIMG2.Image = "rbxassetid://7178573833"
+CashLabel.Name = "CashLabel"
+CashLabel.Parent = Main
+CashLabel.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+CashLabel.BackgroundTransparency = 1.000
+CashLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CashLabel.BorderSizePixel = 0
+CashLabel.Position = UDim2.new(0.28742516, 0, 0.296775997, 0)
+CashLabel.Size = UDim2.new(0, 119, 0, 31)
+CashLabel.Font = Enum.Font.RobotoCondensed
+CashLabel.Text = "N/A"
+CashLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+CashLabel.TextSize = 23.000
+CashLabel.TextXAlignment = Enum.TextXAlignment.Left
+Input.Name = "Input"
+Input.Parent = Main
+Input.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+Input.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Input.BorderSizePixel = 0
+Input.Position = UDim2.new(0.0239520967, 0, 0.472358525, 0)
+Input.Size = UDim2.new(0, 159, 0, 22)
+Input.Font = Enum.Font.RobotoCondensed
+Input.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+Input.PlaceholderText = "Input AMT"
+Input.Text = ""
+Input.TextColor3 = Color3.fromRGB(255, 255, 255)
+Input.TextScaled = true
+Input.TextSize = 14.000
+Input.TextWrapped = true
+UICorner_3.CornerRadius = UDim.new(0, 4)
+UICorner_3.Parent = Input
+Output.Name = "Output"
+Output.Parent = Main
+Output.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Output.BackgroundTransparency = 1.000
+Output.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Output.BorderSizePixel = 0
+Output.Position = UDim2.new(0.28742516, 0, 0.599115431, 0)
+Output.Size = UDim2.new(0, 119, 0, 31)
+Output.Font = Enum.Font.RobotoCondensed
+Output.Text = "Output AMT"
+Output.TextColor3 = Color3.fromRGB(255, 255, 255)
+Output.TextSize = 23.000
+Output.TextXAlignment = Enum.TextXAlignment.Left
+CashIMG3.Name = "CashIMG3"
+CashIMG3.Parent = Main
+CashIMG3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CashIMG3.BackgroundTransparency = 1.000
+CashIMG3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CashIMG3.BorderSizePixel = 0
+CashIMG3.Position = UDim2.new(0.0622178502, 0, 0.637336552, 0)
+CashIMG3.Size = UDim2.new(0, 30, 0, 17)
+CashIMG3.Image = "rbxassetid://7178573833"
+-- DRAG UI--
+local UserInputService = game:GetService("UserInputService")
+
+        local gui = Main
+
+        local dragging
+        local dragInput
+        local dragStart
+        local startPos
+
+        local function update(input)
+        	local delta = input.Position - dragStart
+        	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        end
+
+        gui.InputBegan:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        		dragging = true
+        		dragStart = input.Position
+        		startPos = gui.Position
+        		
+        		input.Changed:Connect(function()
+        			if input.UserInputState == Enum.UserInputState.End then
+        				dragging = false
+        			end
+        		end)
+        	end
+        end)
+
+        gui.InputChanged:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        		dragInput = input
+        	end
+        end)
+
+        UserInputService.InputChanged:Connect(function(input)
+        	if input == dragInput and dragging then
+        		update(input)
+        	end
+end)
+Players = game:GetService('Players')
+function announce(ttl, text)
+	game.StarterGui:SetCore("SendNotification", {
+		Title = ttl;
+		Text = text;
+		Duration = 5;
+	})
+end
+local formatNumber = (function (n)
+	n = tostring(n)
+	return n:reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
+end)
+function SetCash()
+	local foundplayer = game:GetService('Players'):FindFirstChild(TargetTextbox.Text)
+	if foundplayer then
+		CashLabel.Text = (formatNumber(foundplayer.DataFolder.Currency.Value))
+	end
+end
+function Username()
+	TargetTextbox.FocusLost:connect(function()
+		for i,v in pairs(game.Players:GetChildren()) do
+			if (string.sub(string.lower(v.Name),1,string.len(TargetTextbox.Text))) == string.lower(TargetTextbox.Text) then
+				TargetTextbox.Text = v.Name
+				SetCash()
+			end
+		end
+		for i,v in pairs(game.Players:GetChildren()) do
+			if (string.sub(string.lower(v.DisplayName),1,string.len(TargetTextbox.Text))) == string.lower(TargetTextbox.Text) then
+				TargetTextbox.Text = v.Name
+				SetCash()
+			end
+		end
+	end)
+end
+function InputAmount()
+	Input.FocusLost:connect(function()
+		local foundplayer = game:GetService('Players'):FindFirstChild(TargetTextbox.Text)
+		Output.Text = formatNumber(foundplayer.DataFolder.Currency.Value + Input.Text)
+		Input.Text = (formatNumber(Input.Text))
+	end)
+end
+function Counting()
+	while wait() do 
+		local ant = 0 
+		for i,v in pairs(game.Workspace.Ignored.Drop:GetDescendants()) do 
+			if v.Name == "TextLabel" then 
+				local new = string.split(v.Text,"$")[2] 
+				local final if string.match(new,",") then 
+					final = new:gsub("%,","") else 
+					final = new end new = final new = tonumber(new) ant = ant + new 
+			end 
+		end 
+		local function numform(num2) num2 = tostring(num2) 
+			return num2:reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "") 
+		end 
+		Counter.Text = "$"..numform(ant) 
+	end 
+end
+-- INITIATE --
+InputAmount()
+Username()
+Counting()
