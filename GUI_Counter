@@ -1,0 +1,114 @@
+--[[
+    DM @xrefr_ 4 partnerships
+]]
+
+local SimpleCounter = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Line = Instance.new("TextLabel")
+local Title = Instance.new("TextLabel")
+local Counter = Instance.new("TextLabel")
+SimpleCounter.Name = "SimpleCounter"
+SimpleCounter.Parent = game.CoreGui
+SimpleCounter.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Main.Name = "Main"
+Main.Parent = SimpleCounter
+Main.BackgroundColor3 = Color3.fromRGB(20,20,20)
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.386900216, 0, 0.452205896, 0)
+Main.Size = UDim2.new(0, 170, 0, 55)
+Line.Name = "Line"
+Line.Parent = Main
+Line.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Line.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Line.BorderSizePixel = 0
+Line.Position = UDim2.new(0, 0, 0.318181813, 0)
+Line.Size = UDim2.new(0, 170, 0, 2)
+Line.Font = Enum.Font.SourceSans
+Line.Text = ""
+Line.TextColor3 = Color3.fromRGB(0, 0, 0)
+Line.TextSize = 14.000
+Title.Name = "Title"
+Title.Parent = Main
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0, 0, 0.0363636352, 0)
+Title.Size = UDim2.new(0, 95, 0, 15)
+Title.Font = Enum.Font.RobotoCondensed
+Title.Text = " @xrefr_"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 14.000
+Title.TextXAlignment = Enum.TextXAlignment.Left
+Counter.Name = "Counter"
+Counter.Parent = Main
+Counter.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Counter.BackgroundTransparency = 1.000
+Counter.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Counter.BorderSizePixel = 0
+Counter.Position = UDim2.new(0, 0, 0.354545444, 0)
+Counter.Size = UDim2.new(0, 170, 0, 35)
+Counter.Font = Enum.Font.RobotoCondensed
+Counter.Text = " $0"
+Counter.TextColor3 = Color3.fromRGB(255, 255, 255)
+Counter.TextSize = 30.000
+Counter.TextXAlignment = Enum.TextXAlignment.Left
+
+local UserInputService = game:GetService("UserInputService")
+
+function Drag()
+	local gui = Main
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+
+function Counting()
+	while wait() do 
+		local ant = 0 
+		for i,v in pairs(game.Workspace.Ignored.Drop:GetDescendants()) do 
+			if v.Name == "TextLabel" then 
+				local new = string.split(v.Text,"$")[2] 
+				local final if string.match(new,",") then 
+					final = new:gsub("%,","") else 
+					final = new end new = final new = tonumber(new) ant = ant + new 
+			end 
+		end 
+		local function numform(num2) num2 = tostring(num2) 
+			return num2:reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "") 
+		end 
+			Counter.Text = " $"..numform(ant) 
+	end 
+end
+
+Drag()
+Counting()
