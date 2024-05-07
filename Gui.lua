@@ -1,13 +1,3 @@
---[[
-
-	FREE & OPEN SOURCED @xrefr_
-	UPDATED @ 5/2/2024
-	----------------------------
-	CHANGES:
-		RECENT RELEASE
-		
-]]--
-
 local SellingTools = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local Line = Instance.new("TextLabel")
